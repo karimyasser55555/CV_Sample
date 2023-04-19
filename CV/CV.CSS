@@ -1,0 +1,97 @@
+header{
+    padding: 20px 10px;
+    background: #1abc9c;
+    color: white;
+    font-size: 15px;
+    
+    height:30vh;
+}
+
+aside{
+    width: 50%;
+float: left;
+padding: 20px;
+border: 2px solid red;
+height: 95vh;
+
+}
+section{
+    width: 50%;
+float: right;
+padding: 20px;
+border: 2px solid red;
+height: 95vh;
+    
+}
+footer{
+    text-align: center;
+    padding: 3px;
+    background-color: DarkSalmon;
+    color: white;
+    display: block;
+    width: 100%;
+    margin-top: auto;
+} 
+img{
+    width: 200px;
+    border-radius: 50%;
+    
+}
+
+.Name{
+    float: right;
+    width: 50%;
+    position: relative;
+}
+.Image{
+    float: left;
+    
+    position: relative;
+}
+article {
+    height: 100vh;
+    border: 3px solid #fff;
+padding: 20px;
+}
+body{
+min-height: 100vh;
+display: flex;
+flex-direction: column;
+}
+
+@keyframes growProgressBar {
+    0%, 33% { --pgPercentage: 0; }
+    100% { --pgPercentage: var(--value); }
+  }
+  
+  @property --pgPercentage {
+    syntax: '<number>';
+    inherits: false;
+    initial-value: 0;
+  }
+  
+  div[role="progressbar"] {
+    --size: 8rem;
+    --fg: #369;
+    --bg: #def;
+    --pgPercentage: var(--value);
+    animation: growProgressBar 3s 1 forwards;
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: 
+      radial-gradient(closest-side, white 80%, transparent 0 99.9%, white 0),
+      conic-gradient(var(--fg) calc(var(--pgPercentage) * 1%), var(--bg) 0)
+      ;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: calc(var(--size) / 5);
+    color: var(--fg);
+    margin: 15px;
+  }
+  
+  div[role="progressbar"]::before {
+    counter-reset: percentage var(--value);
+    content: counter(percentage) '%';
+  }
